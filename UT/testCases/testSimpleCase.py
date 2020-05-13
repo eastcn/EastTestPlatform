@@ -23,6 +23,14 @@ class TestSimpleCase(unittest.TestCase):
         print("test hello world not equal Hello World")
         self.assertEqual("hello world", "Hello World")
 
+    def test_bigger(self):
+        print("test assert bigger")
+        self.assertGreater(3, 2)
+
+    def test_is_instance(self):
+        print("test is instance")
+        self.assertIsInstance(1, int)
+
 
 if __name__ == '__main__':
     unittest.main()
