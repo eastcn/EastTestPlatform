@@ -4,6 +4,7 @@ date: 2020.05.09
 author: hefeng
 function:
 """
+import sys
 import unittest
 
 
@@ -30,6 +31,22 @@ class TestSimpleCase(unittest.TestCase):
     def test_is_instance(self):
         print("test is instance")
         self.assertIsInstance(1, int)
+
+    @unittest.skip("this is skipped")  # 直接跳过
+    def test_skip(self):
+        print("skip test")
+
+    @unittest.skipIf(True, "this is true")  # 条件判断跳过
+    def test_skip_if(self):
+        print("this will skipped")
+
+    @unittest.skipUnless(sys.platform.startswith("dar"), "需要mac才能运行")  # 满足条件时可运行，不满足则跳过
+    def test_skip_unless(self):
+        print("this is mac")
+
+    @unittest.expectedFailure  # 函数断言失败时，测试通过
+    def test_expect_fail(self):
+        print("失败")
 
 
 if __name__ == '__main__':
