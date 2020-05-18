@@ -6,6 +6,8 @@ function:
 """
 import sys
 import unittest
+import csv
+import random
 
 
 class TestSimpleCase(unittest.TestCase):
@@ -48,6 +50,3 @@ class TestSimpleCase(unittest.TestCase):
     def test_expect_fail(self):
         print("失败")
 
-
-if __name__ == '__main__':
-    unittest.main()
